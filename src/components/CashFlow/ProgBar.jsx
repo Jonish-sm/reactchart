@@ -25,8 +25,9 @@ function ProgBar({ thirdData }) {
       .range([h, 0]);
 
     const colors = {
-      in: "green",
-      out: "orange",
+      in: "#47b747",
+      out: "#02bb7d",
+      border: "black", // Add black border color
     };
 
     svg
@@ -46,8 +47,8 @@ function ProgBar({ thirdData }) {
       .attr("width", xScale.bandwidth() * 0.3) // Adjusted bar width
       .attr("height", (d) => h - yScale(d.in))
       .attr("rx", 5) // Add border radius to the bars
-      // .attr("ry", 5)
-      .style("fill", colors.in);
+      .style("fill", colors.in)
+      // .style("stroke", colors.border); // Set the border color
 
     svg
       .selectAll(".bar-group")
@@ -58,8 +59,8 @@ function ProgBar({ thirdData }) {
       .attr("width", xScale.bandwidth() * 0.3) // Adjusted bar width
       .attr("height", (d) => h - yScale(d.out))
       .attr("rx", 3) // Add border radius to the top
-      // .attr("ry", 5) // Keep the bottom corners sharp
       .style("fill", colors.out);
+    // .style("stroke", 2, colors.border); // Set the border color
 
     svg
       .selectAll(".month-label")
@@ -79,7 +80,7 @@ function ProgBar({ thirdData }) {
       .append("text")
       .attr("class", "axis-label")
       .attr("x", (d, i) => (i === 0 ? 20 : w - 20))
-      .attr("y", (d, i) => h) // Adjusted the vertical position
+      .attr("y", (d, i) => h)
       .text((d) => d)
       .style("text-anchor", (d, i) => (i === 0 ? "start" : "end"));
   }, [data]);
