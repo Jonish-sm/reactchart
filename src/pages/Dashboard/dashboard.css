@@ -1,0 +1,27 @@
+.dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 60px 0;
+  gap: 50px;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.btn button {
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  background: #47b747;
+}
+.btn button:hover {
+  color: white;
+  background: #02bb7d;
+}

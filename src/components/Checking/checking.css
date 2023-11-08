@@ -1,0 +1,53 @@
+.checking {
+  width: 500px;
+  height: 320px;
+  border-radius: 10px;
+  background: white;
+}
+.checking_nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.356);
+  padding: 20px;
+}
+
+.checking_control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+/* .managed {
+  position: relative;
+  width: 100px;
+  height: 30px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(183, 173, 173, 0.537);
+  border-radius: 5px;
+} */
+.managed button {
+  border: none;
+  font-weight: bold;
+  background: white;
+}
+select {
+  width: 100px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(183, 173, 173, 0.537);
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 0px 10px;
+}
+select:focus {
+  outline: none;
+}
+.checking_graph {
+  padding: 20px;
+}

@@ -1,0 +1,38 @@
+.accwatch {
+  width: 500px;
+  height: 320px;
+  border-radius: 10px;
+  background-color: white;
+}
+.accwatch_nav {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.356);
+  padding: 20px;
+}
+.accwatch_graph {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+.thisMonth_title,
+.YTD_title {
+  color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.account_title {
+  color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.account_data p,
+.thisMonth_data p,
+.YTD_data p {
+  margin: 10px;
+  color: rgb(0, 0, 0);
+}
+.account_data p {
+  font-weight: bold;
+}

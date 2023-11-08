@@ -1,0 +1,99 @@
+:root {
+  --background: #f6f7f9;
+  --primary: #47b747;
+  --secoundary: #02bb7d;
+}
+.navbar {
+  width: 100%;
+  -webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 4px 6px -6px #222;
+  position: sticky;
+  background: white;
+  top: 0%;
+  z-index: 1;
+}
+.navbar_content {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.search {
+  position: relative;
+}
+.search input {
+  width: 200px;
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--background);
+}
+.search input:focus {
+  outline: none;
+}
+.search_icons {
+  position: absolute;
+  left: 5%;
+  top: 30%;
+}
+.search_icons.focused {
+  display: none;
+}
+.search_icons {
+  display: block;
+}
+.notification {
+  position: relative;
+}
+.notification_icons {
+  width: 24px;
+  height: 24px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  gap: 5px;
+}
+
+.profile_img {
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.profile_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.drop_down {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 570px) {
+  .search {
+    display: none;
+  }
+  .navbar_content {
+    width: 100%;
+  }
+}

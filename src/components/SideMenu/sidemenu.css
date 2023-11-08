@@ -1,0 +1,29 @@
+:root {
+  --background: #f6f7f9;
+  --primary: #47b747;
+  --secoundary: #02bb7d;
+}
+.sidemenu {
+  height: 100vh;
+  box-shadow: 6px 0 6px -6px #222;
+}
+
+.menu_list div {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 80px;
+  gap: 10px;
+}
+._active {
+  background-color: var(--primary);
+  color: white;
+}
+
+@media screen and (max-width: 570px) {
+  .sidemenu {
+    display: none;
+  }
+}

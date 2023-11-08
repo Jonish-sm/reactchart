@@ -1,0 +1,40 @@
+:root {
+  --background: #f6f7f9;
+  --primary: #47b747;
+  --secoundary: #02bb7d;
+}
+.cashflow {
+  width: 500px;
+  height: 320px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.cashflow_nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.356);
+  padding: 20px;
+}
+.cashflow_nav div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.in_square {
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+  background: var(--secoundary);
+}
+.out_square {
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+  background: var(--primary);
+}
+.cashflow_graph {
+  padding: 20px;
+}
