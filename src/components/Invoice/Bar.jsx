@@ -5,7 +5,6 @@ function Bar({ secoundData }) {
   const [data, setData] = useState(secoundData);
   const svgRef = useRef();
 
-  // Whenever the secoundData prop changes, update the component's data
   useEffect(() => {
     setData(secoundData);
   }, [secoundData]);

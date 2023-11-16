@@ -9,9 +9,10 @@ function Invoice({ secoundData }) {
           <b>Invoices owned to you</b>
         </h4>
 
-        <button>
-          <b>New Sales Invoice</b>
-        </button>
+        <label for="fileInput" class="fileInputLabel">
+          <span>New Sales Invoices</span>
+          <input type="file" id="fileInput" style={{ display: "none" }} />
+        </label>
       </div>
       <div className="invoice_graph">
         <Bar secoundData={secoundData} />

@@ -22,3 +22,22 @@
 .invoice_graph {
   padding: 20px;
 }
+
+.fileInputLabel {
+  display: inline-block;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #4caf50;
+}
+
+.fileInputLabel:hover {
+  background-color: #45a049;
+}
+
+/* Style the hidden file input to make it look like a button */
+.fileInputLabel input {
+  display: none;
+}

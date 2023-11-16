@@ -17,7 +17,7 @@ function ProgBar({ thirdData }) {
       .attr("height", h)
       .style("overflow", "visible");
 
-    const xScale = d3.scaleBand().domain(months).range([0, w]).padding(0.2);
+    const xScale = d3.scaleBand().domain(months).range([0, w]).padding(0.1); // Reduce padding
 
     const yScale = d3
       .scaleLinear()
@@ -25,42 +25,52 @@ function ProgBar({ thirdData }) {
       .range([h, 0]);
 
     const colors = {
-      in: "#47b747",
-      out: "#02bb7d",
-      border: "black", // Add black border color
+      in: "#02bb7d",
+      out: "#47b747",
     };
+
+    const barWidth = xScale.bandwidth() * 0.3; // Reduce bar width
+    const borderRadius = 5; // Set border radius
 
     svg
       .selectAll(".bar-group")
       .data(data)
       .enter()
-      .append("g")
-      .attr("class", "bar-group")
-      .attr("transform", (d) => `translate(${xScale(d.month)}, 0)`);
-
-    svg
-      .selectAll(".bar-group")
-      .append("rect")
+      .append("path")
       .attr("class", "bar in")
-      .attr("x", 0)
-      .attr("y", (d) => yScale(d.in))
-      .attr("width", xScale.bandwidth() * 0.3) // Adjusted bar width
-      .attr("height", (d) => h - yScale(d.in))
-      .attr("rx", 5) // Add border radius to the bars
-      .style("fill", colors.in)
-      // .style("stroke", colors.border); // Set the border color
+      .attr(
+        "d",
+        (d) =>
+          `M${xScale(d.month) + (xScale.bandwidth() - barWidth) / 2},${yScale(
+            d.in
+          )} 
+        h${barWidth} 
+        a${borderRadius},${borderRadius} 0 0 1 ${borderRadius},${borderRadius} 
+        v${h - yScale(d.in)} 
+        a${borderRadius},${borderRadius} 0 0 1 -${borderRadius},${borderRadius} 
+        h-${barWidth} Z`
+      )
+      .style("fill", colors.in);
 
     svg
       .selectAll(".bar-group")
-      .append("rect")
+      .data(data)
+      .enter()
+      .append("path")
       .attr("class", "bar out")
-      .attr("x", 0)
-      .attr("y", (d) => yScale(d.in + d.out))
-      .attr("width", xScale.bandwidth() * 0.3) // Adjusted bar width
-      .attr("height", (d) => h - yScale(d.out))
-      .attr("rx", 3) // Add border radius to the top
+      .attr(
+        "d",
+        (d) =>
+          `M${xScale(d.month) + (xScale.bandwidth() - barWidth) / 2},${yScale(
+            d.in + d.out
+          )} 
+        h${barWidth} 
+        a${borderRadius},${borderRadius} 0 0 1 ${borderRadius},${borderRadius} 
+        v${h - yScale(d.out)} 
+        a${borderRadius},${borderRadius} 0 0 1 -${borderRadius},${borderRadius} 
+        h-${barWidth} Z`
+      )
       .style("fill", colors.out);
-    // .style("stroke", 2, colors.border); // Set the border color
 
     svg
       .selectAll(".month-label")
@@ -69,7 +79,7 @@ function ProgBar({ thirdData }) {
       .append("text")
       .attr("class", "month-label")
       .attr("x", (d) => xScale(d) + xScale.bandwidth() / 2)
-      .attr("y", h + 20)
+      .attr("y", h + 25)
       .text((d) => d)
       .style("text-anchor", "middle");
 
